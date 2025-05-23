@@ -24,6 +24,22 @@ This project is a real-time horn sound detection system developed using **Flask*
 
 <pre><code> 📁 horn-detection-app/ ├── 📁 templates/ │ └── index.html # Web interface template ├── horn_detector_classifier.joblib # Pre-trained ML model ├── app.py # Main Flask application ├── requirements.txt # Python dependencies └── README.md # Project documentation </code></pre>
 
+## 📂 Dataset
+
+This project uses the [Horn Detection Dataset](https://data.mendeley.com/datasets/y5stjsnp8s/2) from Mendeley Data. The dataset consists of labeled audio recordings of vehicle horn sounds and other environmental noises. The audio files are sampled at 44.1 kHz and cover various real-world scenarios for accurate horn detection.
+
+- Dataset Size: Approximately 150 audio clips  
+- Audio Format: WAV (44.1 kHz sampling rate)  
+- Labels: Horn and Non-Horn sounds  
+
+## 📊 Model Performance
+
+The machine learning model was trained on this dataset using extracted MFCC features with noise filtering preprocessing. After training and evaluation with an 80-20 train-test split, the model achieved:
+
+**Test Accuracy:** 94%
+
+This result demonstrates the model’s strong ability to distinguish horn sounds from other noises in real-time audio streams.
+
 
 ## 🚀 Getting Started
 
