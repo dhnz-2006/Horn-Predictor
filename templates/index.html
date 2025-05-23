@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Horn Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .button.stop {
+            background-color: #f44336;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Real-time Horn Detector</h1>
+    <button id="startBtn" class="button">Start Recording</button>
+    <button id="stopBtn" class="button stop" style="display: none;">Stop Recording</button>
+    <div id="status">Status: Not Recording</div>
+
+    <script>
+        const startBtn = document.getElementById('startBtn');
+        const stopBtn = document.getElementById('stopBtn');
+        const status = document.getElementById('status');
+
+        startBtn.onclick = async () => {
+            try {
+                const response = await fetch('/start_recording');
+                const data = await response.json();
+                status.textContent = 'Status: Recording...';
+                startBtn.style.display = 'none';
+                stopBtn.style.display = 'inline-block';
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+
+        stopBtn.onclick = async () => {
+            try {
+                const response = await fetch('/stop_recording');
+                const data = await response.json();
+                status.textContent = 'Status: Not Recording';
+                startBtn.style.display = 'inline-block';
+                stopBtn.style.display = 'none';
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        };
+    </script>
+</body>
+</html>
+        
