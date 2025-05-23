@@ -28,7 +28,7 @@ This project is a real-time horn sound detection system developed using **Flask*
 
 This project uses the [Horn Detection Dataset](https://data.mendeley.com/datasets/y5stjsnp8s/2) from Mendeley Data. The dataset consists of labeled audio recordings of vehicle horn sounds and other environmental noises. The audio files are sampled at 44.1 kHz and cover various real-world scenarios for accurate horn detection.
 
-- Dataset Size: Approximately 150 audio clips  
+- Dataset Size: Approximately 1000 audio clips  
 - Audio Format: WAV (44.1 kHz sampling rate)  
 - Labels: Horn and Non-Horn sounds  
 
